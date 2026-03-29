@@ -1,12 +1,12 @@
 import type { AuditReport } from './types'
 
 // ── Provider config ──────────────────────────────────────────────────────────
-// Production: set GROQ_API_KEY in Vercel env vars → uses Groq (Llama 3.1 70B, fast + free)
+// Production: set GROQ_API_KEY in Vercel env vars → uses Groq (Llama 3.3 70B, fast + free)
 // Local dev:  leave GROQ_API_KEY unset → uses Ollama at localhost
 const GROQ_API_KEY  = process.env.GROQ_API_KEY
 const OLLAMA_URL    = process.env.OLLAMA_URL  ?? 'http://localhost:11434'
 const OLLAMA_MODEL  = process.env.OLLAMA_MODEL ?? 'llama3.1'
-const GROQ_MODEL    = process.env.GROQ_MODEL   ?? 'llama-3.1-70b-versatile'
+const GROQ_MODEL    = process.env.GROQ_MODEL   ?? 'llama-3.3-70b-versatile'
 const USE_GROQ      = Boolean(GROQ_API_KEY)
 
 export interface AuditInput {
