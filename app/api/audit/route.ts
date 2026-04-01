@@ -1,9 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { generateAuditReport } from '@/lib/claude'
 
-// Groq on Vercel Pro: up to 300s. Hobby plan: 60s (Groq is fast enough).
-// Local Ollama: needs 120s+. Set VERCEL_MAX_DURATION in env or upgrade to Pro if needed.
-export const maxDuration = 120
+// Groq is fast (10-20s). Vercel Hobby plan max is 60s.
+export const maxDuration = 60
 
 export async function POST(req: NextRequest) {
   let body: unknown
